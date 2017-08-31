@@ -1,0 +1,22 @@
+1.  实例讲解
+http://blog.csdn.net/huangmeimao/article/details/77740760
+
+2. APP 可运行jar包----smarthome,jar
+
+可以双击直接运行进行语音和句子测试
+
+3. APP 实例代码
+demosourcecode.jar  添加即可，java 环境为JDK1.8
+
+4. 欧拉蜜JAVA SDK 介绍
+
+olami-java-client-sdk-1.0.1-bin：
+olami-java-client-1.0.1.jar---SDK JAR包，不包含基本运行包
+olami-java-client-1.0.1-full.jar-----包含所需要的JAR包， 如果本身工程没有设置其他包，建议使用这个包
+olami-java-client-1.0.1-javadoc.jar----API接口使用说明
+其他均为例子
+请访问OLAMI官网查看使用介绍：
+ https://cn.olami.ai/wiki/?mp=sdk&content=sdk/java/reference.html
+
+olami-java-client-1.0.1-sources.jar------------JAVA SDK源码，方便调试
+
