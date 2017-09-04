@@ -3,7 +3,9 @@ http://blog.csdn.net/huangmeimao/article/details/77740760
 
 2. APP 可运行jar包----smarthome,jar
 
-可以双击直接运行进行语音和句子测试
+可以双击直接运行进行语音和句子测试.
+
+注意：测试录音前请确保麦克风能正常输入。
 
 3. APP 实例代码
 demosourcecode.jar  添加即可，java 环境为JDK1.8
@@ -19,4 +21,7 @@ olami-java-client-1.0.1-javadoc.jar----API接口使用说明
  https://cn.olami.ai/wiki/?mp=sdk&content=sdk/java/reference.html
 
 olami-java-client-1.0.1-sources.jar------------JAVA SDK源码，方便调试
+5  智能家居语法文件
+
+smarthome.osl
 

@@ -1,0 +1,736 @@
+#PowerGrammar 1.0;
+!slot <slot_time1:datetime(1|40)>;
+!slot <slot_timing:datetime.duration(1|15)>;
+!slot <color:ext(1|10)>;
+!slot <maxsensorvalue:number(1|5)>;
+!slot <device_index:number(1|3)>;
+!slot <position_name:ext(1|10)>;
+!slot <sensorvalue:float(1|10)>;
+!slot <minsensorvalue:number(1|5)>;
+!slot <control_obj:ext(1|10)>;
+!slot <position_index:number(1|3)>;
+!intention <smarthome>;
+!modifier <control_obj> : cancel|auto|satudown|setwarm|setnext|airsupply|inside|gracer|setcute|enable|setcalm|leavehome|lightup|setright|attrairquality|altertone|soft|all|setlast|changechannel|setwinddirection|setsport|query|degree|mute|attrtemperature|extralfun1|arrivehome|settemperature|setwindpower|setatmosphere|setleft|mystery|stop|calmer|attrmod|attrwindpower|setlightintensity|shutdown|attrlevel|strong|cuter|setbright|cold|medium|hot|weak|setdown|setcolor|romantic|arrtlightintensity|setairquality|attrwinddirection|setgrace|close|lightdown|satuup|sweep|dehu|normal|rest|setmod|max|brighter|cool|change|setvolume|warmer|setlevel|attrco2|cooler|sethumidity|settiming|setup|sporter|setcool|open|attrhumidity;
+
+<smarthome>:<p208_0002>|
+    <g_openclose1>|
+    <p208_0001>|
+    <g_openclose_使用>|
+    <i005_2>|
+    <i006_5>|
+    <i006_4>|
+    <i006_3>|
+    <i006_2>|
+    <g_openclose_窗帘_把字句_倒装句>|
+    <p105_1>|
+    <p215_3>|
+    <p215_1>|
+    <p215_2>|
+    <g_open_看电视>|
+    <g_openclose_投影布_倒装句>|
+    <i007_1>|
+    <g_close_不看电视>|
+    <p227_2>|
+    <p227_3>|
+    <p227_1>|
+    <p1003>|
+    <g_openclose_all_投影布_倒装句>|
+    <i008_3>|
+    <i008_2>|
+    <i008_1>|
+    <p228_1>|
+    <g_openclose_灯>|
+    <g_openclose_all_窗帘_把字句_倒装句>|
+    <i009>|
+    <i009_3>|
+    <i009_2>|
+    <i009_1>|
+    <g_openclose_空调>|
+    <i003>|
+    <i004>|
+    <i005>|
+    <i006>|
+    <i007>|
+    <p210_2>|
+    <p210_3>|
+    <p210_1>|
+    <g_open_需要使用>|
+    <p002_1>|
+    <p218_1>|
+    <p222_1>|
+    <g_openclose_all_把字句_倒桩>|
+    <p212>|
+    <p211>|
+    <p210>|
+    <p101_2>|
+    <g_close_不吹空调>|
+    <p101_1>|
+    <p215>|
+    <p214>|
+    <p213>|
+    <p219>|
+    <p218>|
+    <g_openclose_灯_把字句_倒装句>|
+    <p211_2>|
+    <p219_1>|
+    <p201>|
+    <p200>|
+    <p204>|
+    <p203>|
+    <p202>|
+    <p209>|
+    <p208>|
+    <p207>|
+    <p206>|
+    <p200_1>|
+    <i003_6>|
+    <i003_5>|
+    <g_openclose_空调_倒装句>|
+    <p212_1>|
+    <g_openclose_窗帘>|
+    <p102>|
+    <p223>|
+    <p101>|
+    <p222>|
+    <p100>|
+    <p227>|
+    <p226>|
+    <p105>|
+    <p225>|
+    <i003_4>|
+    <i003_3>|
+    <i003_2>|
+    <p228>|
+    <i003_1>|
+    <p201_1>|
+    <p201_2>|
+    <g_openclose_灯_all_把字句_倒装句>|
+    <g_openclose_把字句_倒装句>|
+    <p213_1>|
+    <p003>|
+    <p002>|
+    <p005>|
+    <p004>|
+    <g_openclose_投影布>|
+    <i004_2>|
+    <i004_1>;
+//All rules
+<hmauto_head2>:[<frontyuqici>]<CommonStart>[<IWantPlease>][[<adverbdo>]<helpme>];
+<doyouknow>:<you><knowornot>;
+<bad>:差|糟[糕]|垃圾|不好|污浊|污染|坏;
+<windvelocity>:风[的]速[度]|风的大小|风[的]强[弱]|风[力]|风量;
+<调节属性_名词>:<level><{control_obj@=setlevel}>|<模式2><{control_obj@=setmod}>|<风力><{control_obj@=setwindpower}>|<风向><{control_obj@=setwinddirection}>;
+<changeone>:(<alter>|[挑]选)[一](种|个);
+<摄像头>:([(门口|门前|室内)[的]]([监控](摄像|录像)[头]|监控))|(院子[里]|室外)[的]([监控](摄像|录像)[头]|监控);
+<我>:我|俺;
+<wind_fast>:[<very>](大|强|高|快)了;
+<projector>:<投影仪{control_obj=$}>;
+<humidity>:[空气](湿度|湿气);
+<let>:把|将|姜|给;
+<you>:你[小子]|您[老[人家]];
+<soft>:柔和;
+<fullyuqi>:咯|喽|诶|不|呢|啊|嘞|吧|呗|吗|么|嘛|呀|哇|啦|哦|咧|[好|(可)(以)|行|是]吗|(好|(可)(以)|行|中)不|了|没有|(好)(不)(好)|(可)(不)(可以)|(行)(不)(行)|(怎[么]|咋)样|如何|(谢|多)谢[(你|您)[啦|啊|了]|啦|啊|了]|呵[呵[呵[呵[呵]]]]|哈[哈[哈[哈][哈]]]|嘻[嘻[嘻[嘻[嘻]]]]|吖|(可以|能[够])帮[助]我[们]吗|可不可以帮[助]我[们]|能不能够帮[助]我们;
+<hmauto_head>:[<frontyuqici>]<CommonStart>[<whether_can>|<whether_able>][<IWantPlease>][[<adverbdo>]<helpme>|<iwantto>[<know>]];
+<switchopen>:<open>|<openlight>|<opencurtain>|<openair_conditioning>|<openProjectorbackup>|<openTV>;
+<want>:想[要]|计划|打算|用|[想|需|就|计划|打算]要|希望;
+<complementyuciqi>:了;
+<彩灯>:(彩灯|彩色的灯|七彩灯|多彩灯|变色灯|情景灯|台灯);
+<quality>:快[点|快]|赶快|立即|立刻|立马|赶紧|迅速|马上;
+<lightbright>:[明]亮;
+<mystery>:神秘;
+<hot_adj>:热|燥热;
+<改变_动词>:调[整|节|换]|变|更[换|改]|换|切换|切;
+<condition_moist>:[(<position_name1>|<position_name>)[[的]空气]|<myhome>[[的]空气]|空气](<very>|<haslittle>)<moist>[<interjection>];
+<dehumidifier>:<除湿器{control_obj=$}>;
+<wind_turnup>:增(大|强)|加(大|强)|调(强|大);
+<search_satus>:<verb2(<view>)>;
+<control1>:<g_close_不吹空调>|<g_close_不看电视>|<g_open_看电视>|<g_open_需要使用>|<g_openclose1>|<g_openclose_all_把字句_倒桩>|<g_openclose_all_投影布_倒装句>|<g_openclose_all_窗帘_把字句_倒装句>|<g_openclose_使用>|<g_openclose_把字句_倒装句>|<g_openclose_投影布>|<
+g_openclose_投影布_倒装句>|<g_openclose_灯>|<g_openclose_灯_all_把字句_倒装句>|<g_openclose_灯_把字句_倒装句>|<g_openclose_空调>|<g_openclose_空调_倒装句>|<g_openclose_窗帘>|<g_openclose_窗帘_把字句_倒装句>;
+<remote_control_test>:(向|往)左[<verb_move>]<{control_obj@=setleft}>|(向|往)右[<verb_move>]<{control_obj@=setright}>|(向|往)上[<verb_move>]<{control_obj@=setup}>|(向|往)下[<verb_move>]<{control_obj@=setdown}>;
+<querymore>:[还是|要不|(要不)(还是)]<helpme><queryonce>|[<beable>][再|也][<helpme>]<queryonce>;
+<colored_light_plus>:[<environment>[<de>]](彩灯|彩色的灯|七彩灯|多彩灯|变色灯)<{control_obj#=彩灯}>|(音箱[上]|音响[上])[<de>]灯<{control_obj#=彩灯}>;
+<colors>:色|颜色|色彩;
+<sleep>:((定时|休眠)[功能|模式]|定个时)<{control_obj@=settiming}>;
+<myhome>:[我[们]|咱[们]][的](((家|屋|房[间|子])(里[面]|内)|家|房间)[的]|室内[的])<{control_obj@=inside}>;
+<search>:[寻]找|(查|察)[询|寻|看|找|阅|月]|搜[询|寻|索]|显示|浏览|请教|检查|查[一]查|看[一]看|瞧[一]瞧|找[一]找|问[一]问|列[一]列;
+<mewe>:<me>[们[大家][一起]]|大家[一起];
+<just_will>:立即[要]|马上[要]|快[要]|要;
+<humidifier>:<加湿器{control_obj=$}>;
+<hotwind>:热风|热气;
+<light_intensity>:(光照|光强|光线|光线强度);
+<closecurtain>:(拉起[来]|拉上[来]|拉|合上|阖上)[[一]下];
+<close>:(切掉|切[了]|关闭|关个|关掉|关上|关[了])[[一]下];
+<colored_light>:<彩灯{control_obj=$}>;
+<wind_up>:(([开|加|升|调|增|提](强|高|大|快))|增|加[上]|增加)[一][点|些];
+<wind_down>:([开|减|降|调](低|小|弱)|减[去|掉|上])[一][点];
+<condition_cool_adj>:[[<me>]<feel_verb>][<myhome>](<very>|<haslittle>)(<cool_adj><{control_obj@=setup}>|<hot_adj><{control_obj@=setdown}>)|
+[[<me>]<just_will>]((冻|凉|冷)死了<{control_obj@=setup}>|热死了<{control_obj@=setdown}>)|
+[<just_will>]<let><me>((冻|凉|冷)死了<{control_obj@=setup}>|热死了<{control_obj@=setdown}>);
+<verb_move>:(移动|移)[一下|一个];
+<set>:(调[节]|设[置|定]|更改|改变|变|转|切[换]|调整|转换|换[个]|换成|[修]改|开)[[一]下|为|到|至|成];
+<switchclose>:<close>|<closeair_conditioning>|<closecurtain>|<closelight>|<closeProjectorbackup>;
+<设置_动词>:设[置|定];
+<closeair_conditioning>:不吹|不开;
+<lighter>:(浅)|(轻);
+<conditioningmod>:(制热|热风|热疯|暖风|加热)<{control_obj@=hot}>|(制冷|冷风)<{control_obj@=cold }>|自动<{control_obj@=auto }>|除湿<{control_obj@=dehu }>|(吹风|送风)<{control_obj@=airsupply}>|扫风<{control_obj@=sweep }>|(凉爽|清凉)<{control_obj@=cool }>|(适中|事中|是中)<{control_obj@=normal }>|(静音|无声)<{control_obj@=mute}>|(睡眠|休眠|休息)<{control_obj@=rest}>;
+<窗帘>:窗帘;
+<closedegree_verb>:<close>|<closecurtain>|<closeProjectorbackup>;
+<灯>:灯|灯泡|白炽灯|主灯|大灯|吊灯|小灯|壁灯;
+<负离子>:负离子;
+<fuzzy_low>:低;
+<lightray>:光|光线|灯光;
+<watch>:看[看]|看一看|观看|欣赏|瞅[一]瞅;
+<to>:给|到|至|对|为|和|跟;
+<open>:([打]开|开开|开着|开启|启动|开启|[开始](运转|运行)|开个|开了)[[一]下];
+<是什么>:是什么|(怎么|什么)样|是多少|是啥;
+<de>:的|得;
+<queryhumidity>:[是][<very>](<moist>|<dry>)<questionyuqici>|是不是[<very>](<moist>|<dry>)[<questionyuqici>]|<moist>不<moist>[<questionyuqici>]|<dry>不<dry>|(<moist>|<dry>)不;
+<投影幕布>:(投影幕|投影布|投影幕布|投影布幕);
+<nextone>:(下|后[面])[一]个;
+<closeadj>:关[着|了][的][状态];
+<iwanttoquery>:[<me>|<relation>][还|也]<want>[再|也]<queryonce>;
+<view>:查[看|找|询]|看;
+<condition_dark_adj>:[<control_obj>[[的]<lightnoun>]|<myhome>[[的]<lightnoun>]|<lightnoun>](<very>|有[一]点)<dark>[<interjection>];
+<televisionchannel>:[号]频道|[号]台;
+<adjusttones>:<warmtone><{control_obj@=warmer}>|<brighttone><{control_obj@=brighter}>|
+<cutetone><{control_obj@=cuter}>|<cooltone><{control_obj@=cooler}>|<sporttone><{control_obj@=sporter}>|
+<gracetone><{control_obj@=gracer}>|<calmtone><{control_obj@=calmer}>;
+<onlyadjustto>:<alter>[为|成|成为|到|的];
+<howwhat>:<what>|如何|高[不[高]]|低[不[低]]|好[不[好]]|差[不[差]];
+<generalhead>:[小助手|哦啦|哦啦小助手][<tingdun>];
+<moretime>:([<again>](久|晚|迟)|(时间<again>|[<again>]时间)(长|多|久|晚))[[一]点];
+<need>:(需要|要|想|想要);
+<degree>:一半<{sensorvalue=50}>|百分之百<{sensorvalue=100}>|<sensorvalue>;
+<openadj>:[打]开[着|了][的][状态];
+<please>:请|麻烦|烦请|劳驾|烦劳|拜托|让|叫;
+<adverbdo>:<quality>;
+<decrease>:降低|减少|减弱|<alter><lightweak>;
+<howmuch_adv>:[是|为|有](多(少|高|低)|几);
+<colored_light_new>:[<environment>[<de>]](<colored_light>|灯<{control_obj#=彩灯}>);
+<frontyuqici>:凹[凹[凹]]|嗨[嗨[嗨]]|嗯[嗯[嗯]]|恩','|啊[啊[啊]]|噢[噢[噢]]|嘻[嘻[嘻]]|哼[哼[哼]]|呀[呀[呀]]|噢[噢[噢]]|哈[哈[哈[哈[哈]]]]|
+咦[咦[咦]]|哇[哇[哇]]|嘎[嘎[嘎]]|耶|唔[唔[唔]]|哦[哦[哦]]|哇塞|哇唔|耶|哟|唷|吖|噫[噫[噫]]|
+哎[呀]|[[依]我看](要不|还是)|这样[子]啊|好[吧|的|啊]|OK|很好[啊]|很棒[啊]|不错[啊]|还行[啊]|还可以[啊]|马马虎虎|
+(这|那)个|还好[啊]|[那[',']](就|很好|(好|棒)|(好|棒)极了)|(那)(么)|你好;
+<volume>:音量|声音;
+<condition_dark>:[<control_obj>[[的]<lightnoun>]|<myhome>[[的]<lightnoun>]<{control_obj#=灯}>|<lightnoun><{control_obj#=灯}>|<{control_obj#=灯}>](<very>|有[一]点)<dark>[<interjection>];
+<adjust>:<change(<alter>)>;
+<isok>:好[不好]|行[不行]|可[不可]以|有没有问题;
+<whether_helpme_find>:[<now>][<whether_can>|<whether_able>][<helpme>]<search_satus>[<questionyuqici>]|
+[<helpme>]<search_satus>(<whether_can>|<whether_able>)<questionyuqici>;
+<know>:(知)(道)|(晓)(得)|(了)(解)|(收)(到)|(清)(楚)|(明)(白)|(认)(识);
+<didyouhear>:<you>[有[没有]]听说[过|了];
+<tellme>:告诉[[我]一下]|[跟我](说|讲)下;
+<thisone>:这个;
+<deep>:深|鲜艳;
+<wind_fast_more>:(大|强|快)[了];
+<volume_up>:[开|升|提|增](大|强|高);
+<closeprojectorbackup>:(收起[来]|(卷|捲)起[来]|(卷|捲)回[去]|收回[去]|(拉|(卷|捲)|收|升)上[去|来]|拉升|拉起[来]|升起[来])[[一]下];
+<空调>:空调;
+<alladj>:(全部|所有)[的];
+<sporttone>:运动|轻快|动感|时尚;
+<warmtone>:暖|暖暖|阳光|轻松|温馨|浅浅|柔和|温和|温暖;
+<doyoukown>:[你][是不是]<know>;
+<romantic>:浪漫|温馨;
+<now>:(现在|此(刻|时)|此时此刻|当(下|前)|目前|这次|最近|近来|近期);
+<lightnoun>:光线[的强度]|灯光|光强;
+<canyouquery>:<you><beable><queryaction>[[得|的](到|出|出来)]|<you>[<beable>]<queryaction>(得|的)(到|出|出来)|请<queryaction>;
+<morelittle>:[一](点[点]|些[些]);
+<identify>:识别;
+<openprojectorbackup>:(放下[来]|拉下[来]|展开|拉开|降下[来])[[一]下];
+<again>:再[[一]次]|重新|重复;
+<beable>:能[(不)(能)[够]]|行[不行]|能[够]|会[[还是]不会]|有[没有](本事|能力|可能|权限|功能)|(能)(否)|[可不|是否]可(以)|可(否)|(是)(否|不是)(能[够]|可(以)|会)|擅[不擅]长|在行;
+<gracetone>:优雅|女性化|回味|高雅;
+<净化器>:[空气]净化器|[空气]净化机;
+<control_generalobj>:<humidifier>|<dehumidifier>;
+<environment>:环境[里|中]|房间[里|中|内]|(房|屋)(里|内);
+<brightness>:亮度;
+<what>:(怎么)(样)|(如)(何)|(什么)(样)|(怎)(样)|啥|什么|多少|多么|到什么程度|在哪一方面|何等|哪种;
+<knowornot>:[(知[道])(不)](知)(道)|[(晓[得])(不)](晓)(得)|[(了[解])(不)](了)(解)|[(清[楚])(不)](清)(楚)|[(明[白])(不)](明)(白)|(是)(否|不是)((知)(道)|(晓)(得)|(清)(楚)|(了)(解)|(明)(白)|(认)(识))|(认)(识)[(不)(认)(识)];
+<condition_dry_adv>:[(<position_name1>|<position_name>)[[的]空气]|<myhome>[[的]空气]|空气][<very>|<haslittle>]<dry>[<interjection>];
+<control_obj2>:(<rom_emperature><{control_obj@=attrtemperature}>|<humidity><{control_obj@=attrhumidity}>|<light_intensity><{control_obj@=arrtlightintensity}>|<air_quality><{control_obj@=attrairquality}>|<co2_sensor><{control_obj@=attrco2}>)[<情况>];
+<control_obj1>:<light>|<curtain>|<air_conditioning>|<humidifier>|<air_purifier>|<dehumidifier>|<colored_light>|<camera>|<television>;
+<atmosphere>:<romantic><{control_obj@=romantic}>|<soft><{control_obj@=soft}>|<mystery><{control_obj@=mystery}>;
+<coldwind>:冷风|凉风;
+<swept_wind>:扫风;
+<very>:最[最[最]]|很[很[很]]|好[好[好]]|特别[特别]|尤其|超级|非常[非常]|可|来得|挺|超|蛮|太[太[太]]|比较|真[是]|蛮|万分;
+<模式>:模式|功能|模事;
+<maxvalue>:最大[值];
+<sunshine>:阳光|光线|太阳|太阳的光线;
+<查询属性1>:<level><{control_obj@=attrlevel}>|<模式2><{control_obj@=attrmod}>|<风力><{control_obj@=attrwindpower}>|<风向><{control_obj@=attrwinddirection}>;
+<hatm_really>:实在|确实|真[的];
+<relation>:兄弟|哥哥|哥|弟|弟弟|姐|姐姐|妹|妹妹|爸|爸爸|妈|妈妈|阿姨|大姨|二姨|三姨|大伯|二伯|三伯|叔叔|二叔|大叔|三叔|小叔|伯伯|爷|爷爷|奶|奶奶|姥姥|姥爷|
+宝贝|宝宝|儿子|女儿|孩子|亲爱的|老公|老婆|丈夫|妻子|内人|爱人|女朋友|男朋友|女友|男友|婶婶|大婶|二婶|弟媳|嫂子|外甥|侄子|大侄子|大侄|堂叔|堂弟|堂哥|表叔|表弟|表妹|表姐|表哥|
+堂姐|堂妹|最好的朋友|好朋友|最好的姊妹|好姊妹|姐夫|妹夫|弟妹|媳妇|儿媳妇|孙媳妇|孙子|孙女|外孙|外孙女|老爸|老妈|老姐|小弟|大哥|二哥|二弟|三弟|师兄|师弟|师姐|师妹|
+公司同事|单位同事|部门同事|同事|学校同学|班上同学|同班同学|同学;
+<queryonce>:<queryaction>[[一](<queryaction>|(一)(下))|出来|出];
+<iwantplease>:[<me>][<still>][<very>]<want>[<please>|让][你];
+<风向>:风向;
+<object_canadjust>:(温度|室温|气温)<{control_obj@=settemperature}>|(湿度|湿气)<{control_obj@=sethumidity}>;
+<tone_adj>:色彩|色调|颜色;
+<早_形容时间>:早|快;
+<still>:还[是]|就[是];
+<lastone>:(上|(前|钱)[面])[一][个];
+<exceedminnormal>:有[一](点|些)(小|低|弱)|太(小|低|弱)|不够(强|大);
+<doyouhave>:[那][<you>]<have>;
+<加湿器>:加湿器;
+<opencurtain>:(拉开|放下|(卷|捲)起)[来][[一]下];
+<howwhat_wind>:如何|大[不[大]]|强[不[强]]|低[不[低]]|弱[不[弱]]|小[不[小]];
+<queryaction>:(<search>|看|问|列[出]|翻|瞧)[[一]下|到];
+<light>:<灯{control_obj=$}>;
+<commonstart>:<GeneralHead>;
+<moretime_adj>:(长|多|久|晚)([一]点);
+<停止_动词>:停|停掉|停止[运行|运转]|停下;
+<openair_conditioning>:(吹[一]吹|吹)[[一]下];
+<whether_able>:可以|可不可以|是否可以;
+<fuzzy_turndown>:降低|调低;
+<iwantto>:<me>[(现在|马上)[就]][<still>][<very>]<want>;
+<电视>:(电视|电视机);
+<larger>:很|非常|相当;
+<cooltone>:冷|冷冷|沉闷|阴郁;
+<air_conditioning>:<空调{control_obj=$}>;
+<tone>:[系列[的]](色|色调|颜色|色彩)[系[列]]|系列;
+<interjection>:了|咯|呢|啊|嘞|吧|呗|呀|哇|啦|哦|咧;
+<bright>:亮|刺眼|耀眼;
+<allqualifier>:都|全都|全|全部都;
+<cutetone>:可爱|有趣|快乐;
+<device_qualifier>:(全[部][都]|都|所有[的]|通通)<{control_obj@=all}>;
+<condition_dry>:[<myhome>][[的]空气][<very>|<haslittle>]<dry>[<interjection>]<{control_obj#=未知设备}>;
+<fuzzyplace>:[(室内|房[子]间|屋[子](内|里))<{control_obj@=inside}>];
+<minlevel>:最小|最弱|最低;
+<have>:[那](有[(没)(有)]|是否有);
+<dark>:黑|暗|黑暗|看不清;
+<此刻>:此刻|现在|当前;
+<camera>:<摄像头{control_obj=$}>;
+<lightweak>:小|弱;
+<max>:最;
+<lighttone>:<warmtone><{control_obj@=setwarm}>|<brighttone><{control_obj@=setbright}>|<cutetone><{control_obj@=setcute}>|<cooltone><{control_obj@=setcool}>|
+<sporttone><{control_obj@=setsport}>|<gracetone><{control_obj@=setgrace}>|<calmtone><{control_obj@=setcalm}>;
+<television>:<电视{control_obj=$}>;
+<lightdark>:暗;
+<rom_emperature>:(温度|室温|气温)[值];
+<除湿器>:除湿器|干燥器|除湿机|干燥机;
+<help>:帮|替|给|帮[个]忙|代|为|让|跟;
+<volume_down>:[开|将|减](低|小|弱|安静);
+<changelight>:调;
+<air_purifier>:<净化器{control_obj=$}>;
+<lesstime>:([<again>](早|快)|(时间<again>|[<again>时间])(短|早|快|少))[[一]点]|早一点|(早)点;
+<isntbad>:[是][<very>]<bad><questionyuqici>|是不是[<very>](<bad>|不太好|不怎么样|不好)[<questionyuqici>]|<bad>不<bad>[<questionyuqici>]|<bad>不;
+<alot>:[一](点[点]|些[些]|下[下]);
+<模式2>:模式|模事;
+<volumedown_adj>:低|小;
+<adjustto>:<adjust>[为|成|成为|到];
+<calmtone>:自然|沉稳|大气|稳重;
+<ineed>:[<me>](想[要]|要|需要);
+<晚_形容时间>:晚|迟;
+<tell>:告诉|告知|介绍[[一]介绍]|说明|解释|解说|回答|展示|聊[[一]聊]|谈[[一]谈]|说[[一]说[看]];
+<hmauto_head_ask>:[<frontyuqici>]<CommonStart>[<whether_can>|<whether_able>][<IWantPlease>|<Tellme>][<helpme>|<iwantto>[<know>]|<Doyoukown>];
+<exceedmaxnormal>:(有[一](点|些)(大|高|强))|太(大|高|强)|不够小;
+<wind_slow_more>:(小|弱|慢)[了];
+<改变_词组>:<verb3(<改变_动词>)>;
+<opentv>:(看[[一]看]|观看)[[一]下];
+<投影仪>:(投影仪器|投影仪|投影机器|投影机);
+<generalcontroldevice>:<light>|<curtain>|<air_conditioning>|<humidifier>|<air_purifier>|<dehumidifier>|<colored_light>|<camera>|<television>|<Projector>|<Projectorbackup>;
+<me>:我|人家|俺|咱|鄙人|老子|(m|M)(e)|(M)(E);
+<情况>:情况|状况;
+<hmauto_unit>:摄氏度|度;
+<moist>:湿润|[潮]湿|潮|潮潮的;
+<volumeup_adj>:大|高;
+<我要>:[<我>](要|想[要]|希望|需要);
+<alter>:调|变|调整|更换|变换|换|改|设置|设|显示|调节;
+<风力>:风力|风速;
+<maxlevel>:最大|最强|最高;
+<questionyuqici>:咯|不|呢|啊|嘞|吧|呗|吗|么|嘛|呀|哇|啦|哦|咧;
+<max_qualifier>:(全[部]都|都|所有[的])<{control_obj@=all}>;
+<helpme>:[<can>][再|在][<please>][<you>][<can>][记得|到时[记得]|<isok>|再|也]<help>[<me>]|[<can>][再|在]<please>[<you>]|[<isok>](再|在)|可[不可]以;
+<level>:档位|档;
+<extra_functions>:<负离子><{control_obj@=extralfun1}>|<sleep>;
+<timing>:(定时|定(个|[一]下)时[间])<{control_obj@=settiming}>;
+<dry>:干燥|燥|干|干干的;
+<condition_bright>:[<control_obj>[[的]<lightnoun>]|<myhome>[[的]<lightnoun>]<{control_obj#=灯}>|<lightnoun><{control_obj#=灯}>|<{control_obj#=灯}>](<very>|有[一]点)<bright>[<interjection>];
+<air_quality>:(空气质量[指数]|空气[指数]);
+<co2_sensor>:二氧化碳[[的](浓度|指数|度数|比例)][值|大小];
+<feel_verb>:感觉|觉得|感到;
+<hmauto_head_noyuqi>:<CommonStart>[<whether_can>|<whether_able>][<IWantPlease>][<helpme>|<iwantto>[<know>]];
+<updownattr>:<windvelocity><{control_obj@=setwindpower}>|<volume><{control_obj@=setvolume}>;
+<complexask2>:[<tingdun>][请问](<Youknow>|<Doyouknow>|<IWantToQuery>|<querymore>|<canyouquery>|<Doyouhave>|<tellmemore>|<didyouhear>|<to><me>);
+<curtain>:<窗帘{control_obj=$}>;
+<fuzzy_high>:高;
+<cool_adj>:冷|凉;
+<position_name1>:((大厅|客厅)<{position_name#=客厅}>|(过道|走廊|走道)<{position_name#=走道}>|玄关<{position_name#=玄关}>|(饭厅|餐厅)<{position_name#=餐厅}>|卧室<{position_name#=卧室}>|(小房间|次卧)<{position_name#=次卧}>|(主卧|大房间)<{position_name#=主卧}>|阁楼<{position_name#=阁楼}>|夜灯<{position_name#=夜灯}>)<{control_obj@=inside}>;
+<haslittle>:有[一](点|些);
+<tobe>:为|成|成为|到;
+<brighttone>:明亮|爽朗|清爽|干净;
+<fuzzy_turnup>:加[高|上[去]]|调[高|上[去]]|升[高|上[去]]|增[加|上[去]]|提高[上去];
+<switch>:(切[换]|换|更换|按|调[整|换]|转|选|跳)[到|至];
+<closelight>:(熄灭|熄|灭|熄掉)[[一]下];
+<condition_bright_adj>:[<control_obj>[[的]<lightnoun>]|<myhome>[[的]<lightnoun>]|<lightnoun>](<very>|有[一]点)<bright>[<interjection>];
+<wind_turndown>:降(小|弱)|调(小|弱);
+<can>:(能)[(不)(能)[够]]|(能)(否)|[(是)(否)](能[够]|可以)|(是)(不)(是)(能[够]|可以)|可[以]不可以|会|懂|知[道]|了解;
+<openlight>:(点亮|开[这|那](只|盏))[[一]下];
+<projectorbackup>:<投影幕布{control_obj=$}>;
+<lesstime_adj>:(少|小)([一]点);
+<biaodian>:','|'.'|'!'|'?'|':'|'"'|'”'|'“'|"'"|'。'|'：'|'‘'|'、';
+<pronoun>:他|她|它;
+<move_up>:((开|调|提)[的](高|大)|(高|大)|升[的][高|上去])[[一]些|[一]点|[一]下];
+<陈述句尾>:喔[喔]|咯|喽|诶|呢|啊|嘞|吧|呗|么|嘛|呀|哇|啦|哦|咧|(好|(可)(以)|行)吗|(好|(可)(以)|行|中)不|了|没有|(好)(不)(好)|(可)(不)(可以)|(行)(不)(行)|(怎[么]|咋)样|如何|(谢|多)谢[(你|您)[啦|啊|了]|啦|啊|了]|呵[呵[呵[呵[呵]]]]|哈[哈[哈[哈][哈]]]|嘻[嘻[嘻[嘻[嘻]]]]|吖|(可以|能[够])帮[助]我[们]吗|可不可以帮[助]我[们]|能不能够帮[助]我们;
+<opendegree_verb>:<open>|<opencurtain>|<openProjectorbackup>;
+<whether_can>:是否能[够]|能不能[够]|能[够];
+<lightstrong>:强|高|大;
+<increase>:增大|增加|提高|增强|<alter><lightstrong>;
+<minvalue>:最小[值];
+<howmuch>:[是|为|有](多(少|高|低)|几)[<hmAuto_unit>];
+<tingdun>:','|'.'|'!'|'?'|':'|'。'|'：'|'、';
+<whetherhas>:有没有|是否[有];
+<youknow>:<you><know>;
+<wind_slow>:[<very>](低|小|弱|慢)了;
+<tellmemore>:[还是|要不|(要不)(还是)][<please>[<you>]|<you>][<can>]([再|也]<tell>[给]<me>|[<help>]<mewe>[来]<tell>|[给<me>[再|也]|(再|也)给<me>]<tell>)[得|[一](点|些|下)[给<me>]];
+<move_down>:([开|调|提][的]低|降[的][低|下[去]])[[一]些|[一]点|[一]下];
+<verybad>:(太|真)<bad>|好(差|糟[糕]|垃圾|污浊|污染|坏);
+<evenmore>:再|更[加];
+//All templates
+<verb_group1:template>: [=_1=]$(_1)[[一](下|些|点)];
+<verb3:template>: [=_1=]$(_1)[一]$(_1)|$(_1)[一](下|个)|$(_1);
+<verb2:template>: [=_1=]$(_1)[一]$(_1)|$(_1)[一]下|$(_1);
+<change:template>: [=_1=]$(_1)$(_1)|$(_1)一$(_1)|$(_1)[一]下|$(_1);
+//All grammars
+//*C:电视不够大声
+//*C:电视音量不够大声
+<p208_0002>:<hmAuto_head>(<control_obj1>|<control_obj>|<{control_obj#=未知设备}>)[[的]<volume>]((不够大|<very>小)<{control_obj!=setup}>|(不够小|<very>大)<{control_obj!=setdown}>)声<{control_obj!=setvolume}>[<FullYuqi>];
+//*C:打开灯
+<g_openclose1>:<hmAuto_head>[<adverbdo>]((<open><{control_obj!=open}>|<close><{control_obj!=close}>|<停止_动词><{control_obj!=stop}>)[<myhome>][<device_qualifier>](<?!precedes("上")><control_obj>)[的开关][一下])[<FullYuqi>];
+//*C:把电视大声一点
+<p208_0001>:[<let>]<control_obj>[[的]<volume>][再][<set>](<volumeup_adj>声<{control_obj!=setup}>|(<volumedown_adj>声|安静)<{control_obj!=setdown}>)[<alot>]<{control_obj!=setvolume}>|
+[<let>]<control_obj>[再](<volume_up><{control_obj!=setup}>|<volume_down><{control_obj!=setdown}>)<alot>[声[儿|音]]<{control_obj!=setvolume}>;
+//*C:我想用一下空调
+<g_openclose_使用>:<hmAuto_head>[<adverbdo>](([使]用|用[一]用|操作)<{control_obj!=open}>[下|一下](<control_obj>|<generalcontroldevice>)[的开关][一下]|
+(<control_obj>|<generalcontroldevice>)[的开关][[<me>][<want>]][<adverbdo>]([使]用|用[一]用|操作)<{control_obj!=open}>[下|一下]|
+[<me>](不[<want>][使]用)<{control_obj!=close}>(<control_obj>|<generalcontroldevice>)|
+(<control_obj>|<generalcontroldevice>)[<me>](不[使][<want>]用)<{control_obj!=close}>[了])[<FullYuqi>];
+//*C:光线调的红一点
+<i005_2>:<hmAuto_head>[<let>]([<environment>[<de>]](<lightray><{control_obj#=彩灯}>[[<de>]<colors>]|<colors><{control_obj#=彩灯}>)|<colored_light_new>[[<de>]<colors>])[<adjustto>[<de>]]<color>([一](点|些))<{control_obj!=satuup}>[<FullYuqi>];
+//*C:灯的亮度帮我减弱一点
+<i006_5>:<hmAuto_head>(<verb_group1(<decrease>)>([<environment>[de]](<lightray><{control_obj#=彩灯}>[[<de>]<colors>]|<colors><{control_obj#=彩灯}>)|<colored_light_new>[[<de>]<colors>])[<de>]<brightness>|[<let>]([<environment>[<de>]]<lightray><{control_obj#=彩灯}>|<colored_light_new>)[<de>]<brightness>[<helpme>]<verb_group1(<decrease>)>)<{control_obj!=lightdown}>;
+//*C:光线的亮度调大一点
+<i006_4>:<hmAuto_head>(<verb_group1(<increase>)>([<environment>[<de>]](<lightray><{control_obj#=彩灯}>[[<de>]<colors>]|<colors><{control_obj#=彩灯}>)|<colored_light_new>[[<de>]<colors>])[<de>]<brightness>|[<let>]([<environment>[<de>]]<lightray><{control_obj#=彩灯}>|<colored_light_new>)[<de>]<brightness>[<helpme>]<verb_group1(<increase>)>)<{control_obj!=lightup}>;
+//*C:光线的亮度调到最大值
+<i006_3>:<hmAuto_head>[<let>]([<environment>[<de>]](<lightray><{control_obj#=彩灯}>[[<de>]<colors>]|<colors><{control_obj#=彩灯}>)|<colored_light_new>[[<de>]<colors>])[<de>]<brightness><onlyadjustto>(<maxvalue><{control_obj!=lightup&max}>|<minvalue><{control_obj!=lightdown&max}>)[<FullYuqi>];
+//*C:光线浅点
+<i006_2>:<hmAuto_head>[<let>]([<environment>[<de>]](<lightray><{control_obj#=彩灯}>[[<de>]<colors>]|<colors><{control_obj#=彩灯}>)|<colored_light_new>[[<de>]<colors>])[<adjust>[<de>]](<bright><{control_obj!=lightup}>|<dark><{control_obj!=lightdown}>|<lighter><{control_obj!=satudown}>|<deep><{control_obj!=satuup}>)[一](点|些)[<FullYuqi>];
+//*C:把窗帘帮我拉开一下
+<g_openclose_窗帘_把字句_倒装句>:<hmAuto_head2>[<adverbdo>][<let>][<myhome>][<slot_time1>[的]]([<position_name>][<device_qualifier>]<curtain>[<let><pronoun>][[<adverbdo>]<helpme>][给]|[<position_name>]<curtain>[[<adverbdo>]<helpme>][给]<device_qualifier>[[<adverbdo>]<helpme>][给])[<adverbdo>](<opencurtain><{control_obj!=open}>|<closecurtain><{control_obj!=close}>)[<whether_can>|<whether_able>][<FullYuqi>];
+//*C:空调的风力大不大
+<p105_1>:<hmAuto_head>[<search_satus>]<control_obj>[的]<风力><{control_obj@=attrwindpower}><howwhat_wind>[<FullYuqi>]<{control_obj@=query}>;
+//*C:把净化器的档位调高一下
+<p215_3>:(<move_up><{control_obj!=setup}>|<move_down><{control_obj!=setdown}>)<control_obj>[的]<调节属性_名词>|
+[<let>]<control_obj>[的]<调节属性_名词>(<move_up><{control_obj!=setup}>|<move_down><{control_obj!=setdown}>);
+//*C:净化器调到低档
+<p215_1>:<hmAuto_head>(<set>[<myhome>](<control_obj1>[的]|<control_obj>)[<tobe>](((小风|弱风|低风)<{control_obj!=setwindpower}>|低速|低档)<{control_obj!=weak}>|(中风<{control_obj!=setwindpower}>|中速|中档)<{control_obj!=medium}>|((强风|大风|高风)<{control_obj!=setwindpower}>|高档|高速)<{control_obj!=strong}>)[<模式>]|
+[把|将][<myhome>](<control_obj1>[的]|<control_obj>)<set>[<tobe>](((小风|弱风|低风)<{control_obj!=setwindpower}>|低档|低速)<{control_obj!=weak}>|(中风<{control_obj!=setwindpower}>|中速|中档)<{control_obj!=medium}>|((强风|大风|高风)<{control_obj!=setwindpower}>|高档|高速)<{control_obj!=strong}>)[<模式>])
+[<FullYuqi>];
+//*C:我要调一下空调的风力
+<p215_2>:[<again>][<help>[<me>]|<我要>]<改变_词组><control_obj>[的]<调节属性_名词>[<FullYuqi>]<{control_obj!=change}>|
+[[<again>]<let>]<control_obj>[的]<调节属性_名词>[<help>[<me>]]<改变_词组>[<FullYuqi>]<{control_obj!=change}>|
+[[<again>](<let>|给)](<control_obj>|<空调{control_obj=$}>)<改变_词组><调节属性_名词><{control_obj!=change}>;
+//*C:我想看看电视
+<g_open_看电视>:<hmAuto_head>[<adverbdo>]<openTV>[<alot>]<{control_obj!=open}>[<myhome>][<device_qualifier>][<position_name>]<television>[一下][<FullYuqi>]|
+<hmAuto_head>[<myhome>][<device_qualifier>][<position_name>]<television>[[<me>]<want>][<adverbdo>]<openTV>[<alot>]<{control_obj!=open}>;
+//*C:把投影布卷起来
+<g_openclose_投影布_倒装句>:<hmAuto_head2>[<adverbdo>][<let>][<myhome>][<slot_time1>[的]]([<device_qualifier>][<position_name>]<Projectorbackup>[<let><pronoun>][<helpme>][给]|[<position_name>]<Projectorbackup>[<helpme>][给]<device_qualifier>[<helpme>][给])[<adverbdo>](<openProjectorbackup><{control_obj!=open}>|<closeProjectorbackup><{control_obj!=close}>)[<whether_can>|<whether_able>][<FullYuqi>];
+//*C:把彩灯调暖一些
+//*C:把颜色调暖一点
+//*C:把光线的颜色调暖一些
+<i007_1>:<hmAuto_head>[<let>]([<environment>[<de>]](<lightray><{control_obj#=彩灯}>[[<de>]<colors>]|<colors><{control_obj#=彩灯}>|色调<{control_obj#=彩灯}>)|<colored_light_new>[[<de>]<colors>])[<adjust>[<de>]]<adjusttones>([一](点|些))[<FullYuqi>];
+//*C:我不想看电视了
+<g_close_不看电视>:[<me>]不[<want>]<watch><television><{control_obj!=close}>[<FullYuqi>];
+//*C:把电视切到下个台
+<p227_2>:<hmAuto_head>[<let>](<television>|<control_obj>)[<switch>|到|至]<{control_obj!=changechannel}>(<nextone><{control_obj!=setnext}>|<lastone><{control_obj!=setlast}>)<televisionchannel>[<FullYuqi>];
+//*C:电视我要看50台
+//*C:电视的50台我想看
+//*C:我要看电视的50台
+<p227_3>:[[<me>]<want>]<watch><television>[的]<sensorvalue><televisionchannel><{control_obj!=changechannel}>[<FullYuqi>]|
+(<television>|<control_obj>)[的]<sensorvalue><televisionchannel><{control_obj!=changechannel}>[<me>]<want><watch>[<FullYuqi>]|
+(<television>|<control_obj>)[[<me>]<want>]<watch><sensorvalue><televisionchannel><{control_obj!=changechannel}>[<FullYuqi>];
+//*C:把电视的频道切换到下一个
+<p227_1>:<hmAuto_head>[<let>](<television>|<control_obj>)[的]<televisionchannel>[<helpme>]<switch><{control_obj!=changechannel}>(<nextone><{control_obj!=setnext}>|<lastone><{control_obj!=setlast}>);
+//*C:室内有多少度
+<p1003>:<hmAuto_head>[<search_satus>]((<myhome><{control_obj#=未知设备}>|<control_obj>)[<slot_time1>]|<slot_time1>(<myhome><{control_obj#=未知设备}>|<control_obj>))
+(<howmuch_adv><hmAuto_unit>|[有[没有]]<sensorvalue><hmAuto_unit>)[<FullYuqi>]<{control_obj!=attrtemperature}><{control_obj!=query}>;
+//*C:把全部投影布都卷起来
+<g_openclose_all_投影布_倒装句>:<hmAuto_head2>[<adverbdo>][<let>][<myhome>][<slot_time1>[的]]<device_qualifier>[<position_name>]<Projectorbackup><allqualifier>[<helpme>][<adverbdo>][给](<openProjectorbackup><{control_obj!=open}>|<closeProjectorbackup><{control_obj!=close}>)[<whether_can>|<whether_able>][<FullYuqi>];
+//*C:彩灯的颜色不够暖
+//*C:房间里的颜色不够暖
+<i008_3>:[<environment>][<de>](<tone_adj><{control_obj=彩灯}>|<colored_light>[[<de>]<tone_adj>])不够<adjusttones>[<FullYuqi>];
+//*C:色调再换换
+<i008_2>:<hmAuto_head>(色调|色系|色列|颜色系列)[<again>][给|<helpme>](<adjust>|<changeone>)<{control_obj#=彩灯}><{control_obj!=altertone}>[<FullYuqi>];
+//*C:调一下彩灯的色调
+//*C:换一种色调
+<i008_1>:<hmAuto_head>[随便|随机][<again>][给|<helpme>](<adjust>[<colored_light>[<de>]]|<changeone>)(色调|色系|色列|颜色系列)<{control_obj#=彩灯}><{control_obj!=altertone}>[<FullYuqi>]|
+[<let>]<colored_light>[<de>](色调|色系|色列|颜色系列)<adjust><{control_obj!=altertone}>[<FullYuqi>];
+//*C:把一楼电视的声音关掉
+<p228_1>:<hmAuto_head>([<let>][<position_name>[的]]<television>[的]<volume>[<help>[<me>]][<let><pronoun>][<help>[<me>]]<close>|<close>[<position_name>[的]]<television>[的]<volume>)[<FullYuqi>]<{control_obj!=setmod&mute}>;
+//*C:点亮灯
+<g_openclose_灯>:<hmAuto_head>[<adverbdo>](<openlight><{control_obj!=open}>|<closelight><{control_obj!=close}>)[<myhome>][<device_qualifier>][<position_name>]<light>[一下][<FullYuqi>];
+//*C:把所有窗帘都帮我拉开
+<g_openclose_all_窗帘_把字句_倒装句>:<hmAuto_head2>[<adverbdo>][<let>][<myhome>][<slot_time1>[的]]<device_qualifier>[<position_name>]<curtain><allqualifier>[<helpme>][<adverbdo>][给](<opencurtain><{control_obj!=open}>|<closecurtain><{control_obj!=close}>)[<whether_can>|<whether_able>][<FullYuqi>];
+//*C:来点浪漫的颜色
+//*C:调成浪漫的气氛
+<i009>:[<helpme>](<adjustto>|来[一]点|<me><need>[来][<alot>])<atmosphere>[的](气氛|氛围|<colors>)<{control_obj!=setatmosphere}><{control_obj#=彩灯}>[<FullYuqi>];
+//*C:房间的氛围调节一下
+<i009_3>:[<let>][<environment>[的]](气氛|氛围)<{control_obj!=setatmosphere}><{control_obj#=彩灯}>[<helpme>|<me><need>](<adjust>|<changeone>)<{control_obj!=change}>;
+//*C:帮我调一下气氛
+<i009_2>:[<helpme>|<me><need>](<adjust>|<changeone>)<{control_obj!=change}>[<environment>[的]](气氛|氛围)<{control_obj#=彩灯}><{control_obj!=setatmosphere}>;
+//*C:氛围浪漫一点
+<i009_1>:(气氛|氛围|<colors>)<{control_obj!=setatmosphere}><{control_obj#=彩灯}><atmosphere><alot>;
+//*C:吹吹空调
+<g_openclose_空调>:<hmAuto_head>[<adverbdo>](<openair_conditioning><{control_obj!=open}>|<closeair_conditioning><{control_obj!=close}>)[<myhome>][<device_qualifier>][<position_name>]<air_conditioning>[一下][<FullYuqi>];
+//*C:把环境中的光线调为红色
+//*C:帮我把灯调成红色
+//*C:灯调为红的
+//*C:灯调整为红色
+<i003>:<hmAuto_head>[<let>]([<environment>[<de>]](<lightray><{control_obj#=彩灯}>|<colors><{control_obj#=彩灯}>)|<colored_light_new>)[的颜色|的色彩][<helpme>]<adjustto>[<de>]<color>([<de>]<colors><{control_obj!=setcolor}>[<de>]|<de>)[<FullYuqi>];
+//*C:灯调为冷色
+//*C:把灯调为运动色调
+<i004>:<hmAuto_head>[<let>]([<environment>[<de>]](<lightray><{control_obj#=彩灯}>|<colors><{control_obj#=彩灯}>)|<colored_light_new>)[[<de>]<colors>]<adjustto>[<de>]<lighttone>[<de>]<tone>[[的]灯][<FullYuqi>];
+//*C:光线再红一点
+<i005>:<hmAuto_head>[<let>]([<environment>[<de>]](<lightray><{control_obj#=彩灯}>[[<de>]<colors>]|<colors><{control_obj#=彩灯}>)|<colored_light_new>[[<de>]<colors>])[<adjustto>[<de>]](<evenmore>|<max><{control_obj!=max}>)<color>[[一](点|些)]<{control_obj!=satuup}>[<FullYuqi>];
+//*C:光线调的最亮
+//*C:颜色再浅一点
+//*C:光线再暗一些
+<i006>:<hmAuto_head>[<let>]([<environment>[<de>]](<lightray><{control_obj#=彩灯}>[[<de>]<colors>]|<colors><{control_obj#=彩灯}>)|<colored_light_new>[[<de>]<colors>])[<adjustto>[<de>]](<evenmore>|<max><{control_obj!=max}>)(<bright><{control_obj!=lightup}>|<dark><{control_obj!=lightdown}>|<lighter><{control_obj!=satudown}>|<deep><{control_obj!=satuup}>)[[一](点|些)][<FullYuqi>];
+//*C:把房间里的颜色调的更加运动
+//*C:色调再暖一些
+<i007>:<hmAuto_head>[<let>]([<environment>[<de>]](<lightray><{control_obj#=彩灯}>[[<de>]<colors>]|<colors><{control_obj#=彩灯}>|色调<{control_obj#=彩灯}>)|<colored_light_new>[[<de>]<colors>])[<adjust>[<de>]]<evenmore><adjusttones>[[一](点|些)][<FullYuqi>];
+//*C:调整一下光线
+//*C:调节一下室温
+<p210_2>:<hmAuto_head><set>[<myhome>](<{control_obj#=未知设备}>|<control_obj>)(<object_canadjust>|<air_quality><{control_obj!=setairquality}>|<rom_emperature><{control_obj!=settemperature}>|<light_intensity><{control_obj!=setlightintensity}>)[<FullYuqi>];
+//*C:打开空调的模式
+<p210_3>:<hmAuto_head><open><control_obj>[的]<调节属性_名词>[<FullYuqi>];
+//*C:把空调的风向调节一下
+<p210_1>:<hmAuto_head>[<let>](<control_obj1>[的]|<control_obj>[的])(风[的方]向<{control_obj!=setwinddirection}>|(风[的]速[度]|风的大小|风[的]强[弱]|风力)<{control_obj!=setwindpower}>|温度<{control_obj!=settemperature}>|<模式><{control_obj!=setmod}>)(<改变_词组><{control_obj@=change}>|<设置_动词>)[<myhome>][<device_qualifier>][<FullYuqi>];
+//*C:我需要灯
+<g_open_需要使用>:<me>需要<generalcontroldevice><{control_obj!=open}>;
+//*C:光线调的很亮
+//*C:房间太亮了，帮我把灯关闭
+<p002_1>:<condition_bright><{control_obj!=setdown&setlightintensity}><{control_obj#=灯}>| <condition_bright_adj>[<biaodian>]<control1>[<FullYuqi>];
+//*C:设置定时关闭
+//*C:晚一点定时关闭
+<p218_1>:(<hmAuto_head><slot_timing>后|[<slot_timing>后]<hmAuto_head>|<hmAuto_head>[<set>](<moretime><{control_obj!=setup}>|<lesstime><{control_obj!=setdown}>))[<let>[<myhome>]][<device_qualifier>](<control_obj>|<{control_obj#=未知设备}>)[设置|调成]<sleep><close>[功能|<模式>][<FullYuqi>];
+//*C:净化器晚一点关闭
+//*C:晚一点关闭净化器
+<p222_1>:<hmAuto_head>[<let>](<moretime><{control_obj!=setup}>|<lesstime><{control_obj!=setdown}>)[再][<sleep>]<close><{control_obj!=settiming}>(<control_obj>|<control_obj1>)[<FullYuqi>]|
+<hmAuto_head>[<let>](<control_obj>|<control_obj1>)(<moretime><{control_obj!=setup}>|<lesstime><{control_obj!=setdown}>)[再][<sleep>]<close><{control_obj!=settiming}>[<FullYuqi>]|
+<air_purifier>[的]<timing>[[的]时间](<moretime_adj><{control_obj!=setup}>|<lesstime_adj><{control_obj!=setdown}>);
+//*C:把家里所有的灯都帮我打开，可以吗
+<g_openclose_all_把字句_倒桩>:<hmAuto_head2>[<adverbdo>][<let>][<myhome>][<slot_time1>[的]]<device_qualifier>(<control_obj>|<generalcontroldevice>)<allqualifier>[<helpme>][给][<adverbdo>](<open><{control_obj!=open}>|<close><{control_obj!=close}>)[<whether_can>|<whether_able>][<FullYuqi>];
+//*C:关闭扫风
+//*C:开启扫风模式
+//*C:我要除湿
+//*C:开启制冷模式
+<p212>:<hmAuto_head>[<open>|(<close>|不(要|用)[开]|别[开])<{control_obj!=shutdown}>][<myhome>]((<air_conditioning>)[的]|<{control_obj#=未知设备}>|<control_obj>[的])[<device_qualifier>][的]<conditioningmod>[<模式>][<FullYuqi>]<{control_obj!=setmod}>|
+<hmAuto_head><let>[<myhome>]((<air_conditioning>)[的]|<{control_obj#=未知设备}>|<control_obj>[的])[<device_qualifier>][的]<conditioningmod>[<模式>](<open>|(<close>|不要[开])<{control_obj!=shutdown}>)[<FullYuqi>]<{control_obj!=setmod}>|
+<hmAuto_head>[(<close>|不(要|用)[开]|关了|别[开])<{control_obj!=shutdown}>][<myhome>]((<air_conditioning>)[的]|<{control_obj#=未知设备}>|<control_obj>[的])[<device_qualifier>][的](这个|此)[<模式>][<FullYuqi>]<{control_obj!=setmod}>|
+<hmAuto_head>[<let>][<myhome>]((<air_conditioning>)[的]|<{control_obj#=未知设备}>|<control_obj>[的])<conditioningmod>[<device_qualifier>][的][这个|此][<模式>]((<close>|不要[开]|关了)<{control_obj!=shutdown}>)[<FullYuqi>]<{control_obj!=setmod}>;
+//*C:空调的风向下吹
+<p211>:[<helpme>][再[次]][把|将][<myhome>](<control_obj1>[的]|<{control_obj#=未知设备}>|<control_obj>[的])风[[的方](向|口)][再](([往|向]上[吹|调[整]|摆]|[(吹|调[整]|改)[<tobe>]][向|往]上)[[一](点|些)]<{control_obj!=setup&setwinddirection}>|([往|向]下[吹|调[整]|摆]|[(吹|调[整]|改)[<tobe>]][向|往]下)[[一](点|些)]<{control_obj!=setdown&setwinddirection}>|([往|向]左[吹|调[整]|摆]|[(吹|调[整]|改)[<tobe>]][向|往]左)[[一](点|些)]<{control_obj!=setleft&setwinddirection}>|([往|向]右[吹|调[整]|摆]|[(吹|调[整]|改)[<tobe>]][向|往]右)[[一](点|些)]<{control_obj!=setright&setwinddirection}>)[<FullYuqi>]|
+[<helpme>][再[次]](([往|向]上[吹|调[整]|摆]|[(吹|调[整]|改)[<tobe>]][向]上)[[一](点|些)]<{control_obj!=setup&setwinddirection}>|([往|向]下[吹|调[整]|摆]|[(吹|调[整]|改)[<tobe>]][向]下)[[一](点|些)]<{control_obj!=setdown&setwinddirection}>|([往|向]左[吹|调[整]|摆]|[(吹|调[整]|改)[<tobe>]][向]左)[[一](点|些)]<{control_obj!=setleft&setwinddirection}>|([往|向]右[吹|调[整]|摆]|[(吹|调[整]|改)[<tobe>]][向]右)[[一](点|些)]<{control_obj!=setright&setwinddirection}>)[<myhome>](<control_obj1>[的]|<{control_obj#=未知设备}>|<control_obj>[的])风[[的方](向|口)][<FullYuqi>];
+//*C:设置空调的风向
+//*C:帮我给空调设置风力
+<p210>:<hmAuto_head><设置_动词>[<myhome>][<device_qualifier>](<control_obj>|<{control_obj#=未知设备}>)[的](风[的方]向<{control_obj!=setwinddirection}>|<windvelocity><{control_obj!=setwindpower}>|<模式><{control_obj!=setmod}>)[<FullYuqi>]|
+<hmAuto_head><set>[<myhome>][<device_qualifier>](<control_obj1>|<control_obj>)[的]温度<{control_obj!=settemperature}>[<FullYuqi>]|
+<control_obj1>(风[的方]向<{control_obj!=setwinddirection}>|<windvelocity><{control_obj!=setwindpower}>|温度<{control_obj!=settemperature}>|<模式><{control_obj!=setmod}>)[<FullYuqi>]|
+<hmAuto_head>[给|让][<myhome>][<device_qualifier>](<control_obj1>|<control_obj>|<{control_obj#=未知设备}>)<设置_动词>(风[的方]向<{control_obj!=setwinddirection}>|<windvelocity><{control_obj!=setwindpower}>|<模式><{control_obj!=setmod}>)[<FullYuqi>];
+//*C:客厅的灯处于打开状态吗
+//*C:客厅的灯是关着的吗
+<p101_2>:<hmAuto_head>(<control_obj>[<slot_time1>]|<slot_time1><control_obj>)[是|有|处于](<openadj><{control_obj!=open}>|<closeadj><{control_obj!=close}>)[<questionyuqici>]<{control_obj!=query}>[<FullYuqi>];
+//*C:我不想吹空调了
+<g_close_不吹空调>:([<me>](不[<want>][使][用])(吹)[<position_name>]<air_conditioning>
+|[<position_name>]<air_conditioning>[<me>]吹够了
+)<{control_obj!=close}>[<FullYuqi>];
+//*C:有没有打开二楼的灯
+<p101_1>:<hmAuto_head><whetherhas>(<switchopen><{control_obj!=open}>|<switchclose><{control_obj!=close}>)<control_obj><{control_obj!=query}>[<FullYuqi>];
+//*C:风力调到中档
+<p215>:<hmAuto_head>(<set>[<myhome>](<control_obj1>[的]|<{control_obj#=未知设备}>|<control_obj>)[的](风速|风|风力)[<tobe>](((小风|弱风|低风)<{control_obj!=setwindpower}>|低速|低档)<{control_obj!=weak}>|(中风<{control_obj!=setwindpower}>|中速|中档)<{control_obj!=medium}>|((强风|大风|高风)<{control_obj!=setwindpower}>|高档|高速)<{control_obj!=strong}>)[<模式>]|
+[把|将][<myhome>](<control_obj1>[的]|<{control_obj#=未知设备}>|<control_obj>)[的](风速|风|风力)<set>[<tobe>](((小风|弱风|低风)<{control_obj!=setwindpower}>|低速|低档)<{control_obj!=weak}>|(中风<{control_obj!=setwindpower}>|中速|中档)<{control_obj!=medium}>|((强风|大风|高风)<{control_obj!=setwindpower}>|高档|高速)<{control_obj!=strong}>)[<模式>])
+[<FullYuqi>]<{control_obj!=setwindpower}>;
+//*C:调到25度
+<p214>:<hmAuto_head>(<set>[<myhome>][<slot_time1>[的]][的](<air_conditioning>[的]|<{control_obj#=未知设备}>|<control_obj>)[<slot_time1>[的]][的][温度][<tobe>]<sensorvalue><hmAuto_unit>|
+[把|将][<myhome>][<slot_time1>[的]](<air_conditioning>[的]|<{control_obj#=未知设备}>|<control_obj>)[<slot_time1>[的]][的][温度]<set>[<tobe>]<sensorvalue><hmAuto_unit>)
+[<FullYuqi>]<{control_obj!=settemperature}>;
+//*C:调到扫风模式
+//*C:空调调到制冷模式
+<p213>:<hmAuto_head>(<set>[<myhome>]((<air_conditioning>)[的]|<{control_obj#=未知设备}>|<control_obj>[的][<volume>])[<模式>][<tobe>]<conditioningmod><模式>|
+[把|将][<myhome>]((<air_conditioning>)[的]|<{control_obj#=未知设备}>|<control_obj>[的][<volume>])[<模式>]<set>[<tobe>]<conditioningmod>[<模式>])
+[<FullYuqi>]<{control_obj!=setmod}>;
+//*C:将净化器定时为2小时
+<p219>:<hmAuto_head>[<let>][<position_name1>[的]](<air_purifier>|<control_obj>|<{control_obj#=未知设备}>)(<sleep>[[的]时间][<set>][<tobe>]<slot_timing>|[[的]时间]<set>[<tobe>]<slot_timing><{control_obj!=settiming}>)[<FullYuqi>];
+//*C:打开净化器的定时功能
+//*C:把加湿器的负离子功能打开
+//*C:定时净化器
+//*C:给净化器定时
+//*C:设置定时关闭
+<p218>:<hmAuto_head>((<set>|<open>)<{control_obj!=enable}>|(<close>|取消)<{control_obj!=cancel}>)[<myhome>]([<slot_time1>[的]][<position_name1>[的]]|[<position_name1>[的]][<slot_time1>[的]])[<device_qualifier>](<air_purifier>|<control_obj>|<{control_obj#=未知设备}>)[的]<extra_functions>[<close>][<模式>][<FullYuqi>]|
+<hmAuto_head>[<let>][<myhome>]([<slot_time1>[的]][<position_name1>[的]]|<position_name1>[的]<slot_time1>[的])[<device_qualifier>](<air_purifier>|<control_obj>|<{control_obj#=未知设备}>)[的]<extra_functions>[[的]<模式>][<help>[<me>]]((<set>|<open>)<{control_obj!=enable}>|<close><{control_obj!=cancel}>)[<FullYuqi>]|
+<hmAuto_head><sleep>[<myhome>][<device_qualifier>][<position_name1>[的]](<air_purifier>|<control_obj>)[<FullYuqi>]|
+<hmAuto_head>[给|让|<let>][<myhome>][<device_qualifier>][<position_name1>[的]](<air_purifier>|<control_obj>)[<help>[<me>]]<timing>[<FullYuqi>];
+//*C:把灯点亮
+<g_openclose_灯_把字句_倒装句>:<hmAuto_head2>[<adverbdo>][<let>][<myhome>][<slot_time1>[的]]([<device_qualifier>]<control_obj>[<let><pronoun>][<helpme>][给]|[<position_name>]<light>[<helpme>][给]<device_qualifier>)[<helpme>][给][<adverbdo>](<openlight><{control_obj!=open}>|<closelight><{control_obj!=close}>)[<whether_can>|<whether_able>][<FullYuqi>];
+//*C:关闭扫风
+//*C:开启扫风模式
+<p211_2>:<hmAuto_head>[<open>|(<close>|不(要|用)[开])<{control_obj!=shutdown}>][<myhome>](<control_obj1>[的]|<{control_obj#=未知设备}>|<control_obj>)[<device_qualifier>][的]<swept_wind>[<模式>][<FullYuqi>]<{control_obj!=setwinddirection}>|
+<hmAuto_head><let>[<myhome>](<control_obj1>[的]|<{control_obj#=未知设备}>|<control_obj>[的])[<device_qualifier>][的]<swept_wind>[<模式>](<openair_conditioning>|(<closeair_conditioning>|不要[开])<{control_obj!=shutdown}>)[<FullYuqi>]<{control_obj!=setwinddirection}>;
+//*C:2小时后关净化器
+<p219_1>:(<hmAuto_head><slot_timing>后|<slot_timing>后<hmAuto_head>)(<close>(<control_obj>|<{control_obj#=未知设备}>)(<{control_obj!=settiming}>|[的]<sleep>)|(<control_obj>)(<{control_obj!=settiming}>|[的]<sleep>)<close>)[<FullYuqi>]|
+<hmAuto_head>(<control_obj>)<slot_timing>后<close>(<{control_obj!=settiming}>|<sleep>)[<FullYuqi>];
+//*C:帮我调高客厅的温度
+<p201>:<hmAuto_head>(<move_up><{control_obj!=setup}>|<move_down><{control_obj!=setdown}>)
+[([<myhome>]<control_obj>)[的]|<{control_obj#=未知设备}>](<rom_emperature><{control_obj!=settemperature}>|<humidity><{control_obj!=sethumidity}>)[<FullYuqi>];
+//*C:把客厅的温度帮我升高一点
+<p200>:<hmAuto_head>[<let>][<myhome>]<control_obj>[的](<rom_emperature><{control_obj!=settemperature}>|<humidity><{control_obj!=sethumidity}>)
+[<helpme>](<move_up><{control_obj!=setup}>|<move_down><{control_obj!=setdown}>)[<陈述句尾>]|
+<hmAuto_head>[<let>][<myhome>]<{control_obj#=未知设备}>(<rom_emperature><{control_obj!=settemperature}>|<humidity><{control_obj!=sethumidity}>)[<helpme>](<move_up><{control_obj!=setup}>|<move_down><{control_obj!=setdown}>)[<FullYuqi>];
+//*C:太潮湿了
+<p204>:(<condition_moist><{control_obj#=未知设备}>|<very><moist>[<interjection>])<{control_obj!=setdown&sethumidity}>[<FullYuqi>]
+	|[<myhome>][地[板|面]][的]((水|湿|潮)(气|汽)|空气湿度)[有[一]点][<very>](重|严重)[了]<{control_obj!=setdown&sethumidity}><{control_obj#=未知设备}>[<FullYuqi>]
+    |[<myhome>][地[板|面]|空气][怎么][这么][<very>](潮湿|潮|湿|水)<{control_obj!=setdown&sethumidity}><{control_obj#=未知设备}>[<FullYuqi>];
+//*C:客厅的温度低一点，帮我调高客厅的温度
+<p203>:([<slot_time1>][我[觉得|感觉]]([<myhome>[[的]温度]|<position_name1>[[的]温度]](<very>|稍[稍|微]|有[一](点|些))热[的]|[<myhome>[的]|<position_name1>[的]]温度(<very>|稍[稍|微]|有[一](点|些))高)
+	|[快[要]|即[将]|就]热死[我][了]
+	|[我][快[要]|即[将]|就]热死[了]
+	|[<position_name1>[的]]温度[调][稍[稍|微]]低[一](点|些)|冷一(点|些))(<p200>|<p201>);
+//*C:我很冷，温度高一点
+<p202>:([我[觉得|感觉]][<myhome>[[的]温度]|<position_name1>[[的]温度]](<very>|稍[稍|微]|有[一](点|些)[儿])冷[的]|温度不[<very>]高|温度[<very>]低|(冻|冷)死[我|人]了)(<p200>|<p201>);
+//*C:把电视小点声音
+//*C:空调的风力降低一点
+<p209>:[<myhome>](<control_obj1>|<control_obj>|<{control_obj#=未知设备}>)[的]<updownattr>[<exceedmaxnormal>][<helpme>][再|更]<wind_down><{control_obj!=setdown}>[<interjection>][<alot>][<FullYuqi>]
+|[<myhome>](<control_obj1>|<control_obj>|<{control_obj#=未知设备}>)[的]<updownattr><exceedmaxnormal><{control_obj!=setdown}>[<alot>][<FullYuqi>]
+|[再[次]][<control_obj1>|<control_obj>|<{control_obj#=未知设备}>]<wind_down><{control_obj!=setdown}>[<alot>][<myhome>](<control_obj1>|<control_obj>|<{control_obj#=未知设备}>)[的]<updownattr>[<FullYuqi>] 
+|[<helpme>](把|将)[<myhome>](<control_obj1>|<control_obj>|<{control_obj#=未知设备}>)([的]<updownattr>[再]<wind_down>|[再]<wind_down><updownattr>)<{control_obj!=setdown}>[<interjection>][<alot>][<FullYuqi>];
+//*C:空调的风力帮我开大一点
+//*C:空调的风力太弱了
+//*C:再帮我提高一点风力
+//*C:把空调的风力提高一点
+<p208>:[<myhome>](<control_obj1>|<control_obj>|<{control_obj#=未知设备}>)[的]<updownattr>[<exceedminnormal>][<helpme>][再|更]<wind_up><{control_obj!=setup}>[<interjection>][<alot>][<陈述句尾>]
+|[<myhome>](<control_obj1>|<control_obj>|<{control_obj#=未知设备}>)[的]<updownattr><exceedminnormal><{control_obj!=setup}>[<alot>][<陈述句尾>]
+|[再[次]][<helpme>][<control_obj1>|<control_obj>|<{control_obj#=未知设备}>]<wind_up>[<alot>][<myhome>](<control_obj1>|<control_obj>|<{control_obj#=未知设备}>)[的]<updownattr><{control_obj!=setup}>[<陈述句尾>]
+|[<helpme>](把|将)[<myhome>](<control_obj1>|<control_obj>|<{control_obj#=未知设备}>)[的]<updownattr>[再]<wind_up><{control_obj!=setup}>[<interjection>][<alot>][<陈述句尾>];
+//*C:房间里的温度太低了
+<p207>:<hmAuto_head>[[<me>]<feel_verb>](<myhome>[<slot_time1>[的]]<control_obj>[的]| <control_obj> [<slot_time1>[的]]|([<slot_time1>[的]]<control_obj>[的]| <control_obj> [<slot_time1>[的]])|[<myhome>]<{control_obj#=空调}>)<rom_emperature><{control_obj!=settemperature}>
+((<very>|<haslittle>[<very>])(低|冷)<{control_obj!=setup}>[了]|
+((<very>|<haslittle>[<very>])(高|热)[了]|热死了)<{control_obj!=setdown}>)[<FullYuqi>];
+//*C:空气不太好,打开净化器
+<p206>:[<myhome>][的](空气[味道]|味道|气味)[的][质量|品质][<hatm_really>](不[是][<very>]好|[<very><?!follows("好")>]<bad>[了]|有[一](点|些)<bad>|<verybad>|一点都不好|难闻)(<g_openclose1>|<{control_obj!=setup&setairquality}><{control_obj#=未知设备}>)[<FullYuqi>]|
+[<myhome>][的](空气[味道]|味道|气味)(好大|好重)(<g_openclose1>|<{control_obj!=setup&setairquality}><{control_obj#=未知设备}>)[<FullYuqi>]|
+<hmAuto_head>净化[[一]下][<myhome>]<air_quality><{control_obj!=setairquality}><{control_obj!=setup}><{control_obj#=净化器}>[<FullYuqi>];
+//*C:太冷了
+//*C:屋里太冷了
+//*C:屋里有点冷
+//*C:我觉得有点冷
+//*C:我感觉屋里有点热
+//*C:热死了
+//*C:冻死了
+<p200_1>:<hmAuto_head><condition_cool_adj>[的]<{control_obj=空调}><{control_obj!=settemperature}>[<陈述句尾>];
+//*C:颜色再换换
+<i003_6>:<hmAuto_head><colors>[<again>][给|<helpme>](<adjust>|<changeone>)<{control_obj#=彩灯}><{control_obj!=setcolor&change}>[<FullYuqi>];
+//*C:再换一种颜色
+<i003_5>:<hmAuto_head>[随便|随机][<again>][给|<helpme>](<adjust>|<changeone>)<colors><{control_obj#=彩灯}><{control_obj!=setcolor&change}>[<FullYuqi>];
+//*C:空调吹一下
+<g_openclose_空调_倒装句>:<hmAuto_head2>[<adverbdo>][<let>][<myhome>][<slot_time1>[的]]([<device_qualifier>][<position_name>]<air_conditioning>[<let><pronoun>][<helpme>][给]|[<position_name>]<air_conditioning>[<helpme>][给]<device_qualifier>[<helpme>][给])[<adverbdo>](<openair_conditioning><{control_obj!=open}>|<closeair_conditioning><{control_obj!=close}>)[<whether_can>|<whether_able>][<FullYuqi>];
+//*C:扫下风
+<p212_1>:<hmAuto_head>(<{control_obj#=未知设备}>|<air_conditioning>)(扫[一]下)风<{control_obj!=setmod&sweep}>;
+//*C:拉开窗帘
+<g_openclose_窗帘>:<hmAuto_head>[<adverbdo>](<opencurtain><{control_obj!=open}>|<closecurtain><{control_obj!=close}>)[<myhome>][<device_qualifier>][<position_name>]<curtain>[一下][<FullYuqi>];
+//*C:房间的空气是不是很干
+<p102>:([<slot_time1>[的]]<control_obj>|<control_obj><slot_time1>[的]|<myhome><{control_obj#=未知设备}>)[的[空气]]
+(<queryhumidity><{control_obj!=sethumidity}>)<{control_obj!=query}>[<FullYuqi>];
+//*C:打开一半窗帘
+//*C:完全打开窗帘
+//*C:把窗帘完全打开
+//*C:把窗帘的一半打开
+//*C:把窗帘打开一半
+<p223>:<hmAuto_head>[<let>](<curtain>|<control_obj>)((<opencurtain>|<open>)<{control_obj!=open}>|(<closecurtain>|<close>)<{control_obj!=close}>)<degree><{control_obj!=degree}>|
+<hmAuto_head>[<let>](<curtain>|<control_obj>)[的]<degree><{control_obj!=degree}>((<opencurtain>|<open>)<{control_obj!=open}>|(<closecurtain>|<close>)<{control_obj!=close}>)|
+<hmAuto_head>[<let>](<curtain>|<control_obj>)(完全)<{control_obj!=degree}>(<{sensorvalue#=100}>(<opencurtain>|<open>)<{control_obj!=open}>|(<closecurtain>|<close>)<{sensorvalue#=100}><{control_obj!=close}>)|
+<hmAuto_head>完全<{control_obj!=degree}>(<{sensorvalue#=100}>(<opencurtain>|<open>)<{control_obj!=open}>|<{sensorvalue#=100}>(<closecurtain>|<close>)<{control_obj!=close}>)(<curtain>|<control_obj>)|
+<hmAuto_head>((<opencurtain>|<open>)<{control_obj!=open}>|(<closecurtain>|<close>)<{control_obj!=close}>)<degree><{control_obj!=degree}>[的](<curtain>|<control_obj>);
+//*C:客厅的加湿器有没有打开
+<p101>:<hmAuto_head>[<myhome>][<alladj>]<control_obj>[<slot_time1>]<whetherhas>[<helpme>](<switchopen><{control_obj!=open}>|<switchclose><{control_obj!=close}>)[<complementyuciqi>][<questionyuqici>]<{control_obj!=query}>[<FullYuqi>];
+//*C:空调调久一点
+<p222>:<hmAuto_head>[<let>][<device_qualifier>](<control_obj>|<control_obj1>|<{control_obj#=未知设备}>)<set>(<moretime><{control_obj!=settiming&setup}>|<lesstime><{control_obj!=settiming&setdown}>)[<FullYuqi>];
+//*C:室内的温度高不高
+<p100>:<hmAuto_head>[<search_satus>](<myhome>[<slot_time1>[的]]<{control_obj#=未知设备}>|<control_obj>[的][<slot_time1>[的]]|[<slot_time1>[的]][<myhome>]<{control_obj#=未知设备}>)<control_obj2>[<howmuch>|<howwhat>|<isntbad>]<{control_obj!=query}>[<complexask2>][<FullYuqi>];
+//*C:把电视切换到26台
+<p227>:<hmAuto_head>[<let>](<television>|<control_obj>)[<helpme>]<switch><sensorvalue><televisionchannel><{control_obj!=changechannel}>[<FullYuqi>];
+//*C:我回来了
+<p226>:(我回来|我回家|我到家|我归来)(了|啦)<{control_obj#=灯}><{control_obj!=open&all&arrivehome}>|[我][要](出去|走|离开|出门)(了|啦)<{control_obj#=未知设备}><{control_obj!=close&all&leavehome}>[<FullYuqi>];
+//*C:空调是什么风速
+//*C:空调的模式是什么
+//*C:帮我查查空调的模式
+//*C:查一下空调的模式
+//*C:空调的风速是什么，查查
+//*C:空调现在是什么模式
+//*C:查查空调是什么风速
+//*C:空调处于什么模式
+//*C:空调的模式
+<p105>:<hmAuto_head>[<search_satus>]<control_obj>[的]<查询属性1>[<是什么>]<{control_obj@=query}>|
+<hmAuto_head><control_obj>[<此刻>][的]<查询属性1><是什么>[<search_satus>]<{control_obj@=query}>|
+<hmAuto_head>[<search_satus>]<control_obj>[<此刻>]<是什么><查询属性1><{control_obj@=query}>|
+<hmAuto_head>[<search_satus>]<control_obj>[<此刻>]处于什么<查询属性1><{control_obj@=query}>;
+//*C:把窗帘打开一部分
+//*C:把窗帘再打开点
+//*C:帮我把窗帘再多开一些
+<p225>:<hmAuto_head>[<let>](<curtain>|<control_obj>)[<again>](((<closecurtain>|<close>)(小|少)[一](点|些|部分)|少(<closecurtain>|<close>)[一](点|些|部分))<{control_obj!=setdown&close}>|((<closecurtain>|<close>)[多|大][一](点|些|部分)|多(<closecurtain>|<close>)[一](点|些|部分))<{control_obj!=setup&close}>|((多(<opencurtain>|<open>)|(<opencurtain>|<open>)[多|大])|<again>(<opencurtain>|<open>))[一](点|些|部分)<{control_obj!=setup&open}>|(少(<opencurtain>|<open>)|(<opencurtain>|<open>)(少|小))[一](点|些|部分)<{control_obj!=setdown&open}>);
+//*C:调成绿色
+<i003_4>:<hmAuto_head>[<again>](<onlyadjustto>)(<color>[<de>]<colors>[<de>][灯]|<color>灯)<{control_obj!=setcolor}><{control_obj#=彩灯}>[<de>][<FullYuqi>];
+//*C:把彩灯换换颜色
+//*C:把灯帮我换下颜色
+<i003_3>:<hmAuto_head>[<let>]([<environment>[<de>]]<lightray><{control_obj#=彩灯}>|<colored_light_new>)[<helpme>](<adjust>|<changeone>)<colors><{control_obj@=setcolor&change}>;
+//*C:屋里的光线帮我调整一下
+<i003_2>:<hmAuto_head>([<environment>[<de>]]<lightray><{control_obj#=彩灯}>|<colored_light_new>)[[<de>]<colors>][<helpme>|给](<adjust>|<changeone>)<{control_obj!=setcolor}>;
+//*C:电视静音
+//*C:把电视帮我静音
+<p228>:<hmAuto_head>[<let>](<television>|<control_obj>)[[的]<volume>][<let><pronoun>][<help>[<me>]][<let><pronoun>]静音<{control_obj!=setmod&mute}>;
+//*C:帮我换下灯的颜色
+//*C:调整一下光线
+//*C:帮我调整一下灯的颜色
+<i003_1>:<hmAuto_head>(<adjust>|<changeone>)([<environment>[<de>]]<lightray><{control_obj#=彩灯}>|<colored_light_new>)[[<de>]<colors>]<{control_obj!=setcolor}>[<FullYuqi>];
+//*C:帮我把空调的温度调高一度
+<p201_1>:<hmAuto_head>[<let>](<air_conditioning>[的]|<control_obj>[的]|<{control_obj#=未知设备}>)[温度](<wind_up><{control_obj!=setup}>|<wind_down><{control_obj!=setdown}>)<sensorvalue><hmAuto_unit><{control_obj!=settemperature}>[<FullYuqi>];
+//*C:调高一度空调的温度
+<p201_2>:<hmAuto_head>(<wind_up><{control_obj!=setup}>|<wind_down><{control_obj!=setdown}>)<sensorvalue><hmAuto_unit><{control_obj!=settemperature}>(<air_conditioning>[的]|<control_obj>[的])温度;
+//*C:把所有的灯都帮我点亮
+<g_openclose_灯_all_把字句_倒装句>:<hmAuto_head2>[<adverbdo>][<let>][<myhome>][<slot_time1>[的]]<device_qualifier><control_obj><allqualifier>[<helpme>][<adverbdo>][给](<openlight><{control_obj!=open}>|<closelight><{control_obj!=close}>)[<whether_can>|<whether_able>][<FullYuqi>];
+//*C:把客厅里的灯帮我打开
+<g_openclose_把字句_倒装句>:<hmAuto_head2>[<adverbdo>][<let>][<myhome>][<slot_time1>[的]]([<device_qualifier>](<control_obj>|<generalcontroldevice>)[<let><pronoun>][<helpme>][给]|(<control_obj>|<generalcontroldevice>)[<helpme>]<device_qualifier>)[<adverbdo>](<open><{control_obj!=open}>|<close><{control_obj!=close}>|<停止_动词><{control_obj!=stop}>)[<whether_can>|<whether_able>][<FullYuqi>];
+//*C:来点凉风
+<p213_1>:<hmAuto_head>[<ineed>]<{control_obj#=空调}>(来点|吹吹|吹一下)(<coldwind><{control_obj!=cold }>|<hotwind><{control_obj!=hot}>)<{control_obj!=setmod}>;
+//*C:房间里太干了，帮我把加湿器打开
+<p003>:[[<myhome>]([<slot_time1>[的]][<position_name1>[的]]|[<position_name1>[的]][<slot_time1>[的]])空气|<myhome>|[我[的]]皮肤[感觉]]
+(<condition_dry><{control_obj!=setup&sethumidity}>|<condition_dry_adv>[<biaodian>]<control1>)[<FullYuqi>];
+//*C:房间里太暗了，帮我把灯打开
+<p002>:<condition_dark><{control_obj!=setup&setlightintensity}><{control_obj#=灯}>|<condition_dark_adj>[<biaodian>]<control1>[<FullYuqi>];
+//*C:开空调的时间到了
+<p005>:[<device_qualifier>]
+(((<openlight><{control_obj!=open}>|<closelight><{control_obj!=close}>)(<light>|<colored_light>|<control_obj>))|
+((<opencurtain><{control_obj!=open}>|<closecurtain><{control_obj!=close}>)(<curtain>|<control_obj>))|
+((<open><{control_obj!=open}>|<close><{control_obj!=close}>)(<control_generalobj>|<control_obj>))|
+((<openair_conditioning><{control_obj!=open}>|<closeair_conditioning><{control_obj!=close}>)(<air_conditioning>|<control_obj>)))
+[的](时间|时候)到<complementyuciqi>;
+//*C:到了开空调的时间了
+<p004>:(到[了][应][该]|是(时候|时间)[应][该]|[应]该)
+([<device_qualifier>]
+(((<openlight><{control_obj!=open}>|<closelight><{control_obj!=close}>)(<light>|<colored_light>|<control_obj>))|
+((<opencurtain><{control_obj!=open}>|<closecurtain><{control_obj!=close}>)(<curtain>|<control_obj>))|
+((<open><{control_obj!=open}>|<close><{control_obj!=close}>)(<control_obj1>|<control_obj>))|
+((<openair_conditioning><{control_obj!=open}>|<closeair_conditioning><{control_obj!=close}>)(<air_conditioning>|<control_obj>)))
+[的][时间|时候]|把
+(((<light>|<colored_light>|<control_obj>)(<openlight><{control_obj!=open}>|<closelight><{control_obj!=close}>))|
+((<curtain>|<control_obj>)(<opencurtain><{control_obj!=open}>|<closecurtain><{control_obj!=close}>))|
+((<control_obj1>|<control_obj>)(<open><{control_obj!=open}>|<close><{control_obj!=close}>))|
+((<air_conditioning>|<control_obj>)(<openair_conditioning><{control_obj!=open}>|<closeair_conditioning><{control_obj!=close}>)))
+)[<complementyuciqi>];
+//*C:拉升投影布
+<g_openclose_投影布>:<hmAuto_head>[<adverbdo>](<openProjectorbackup><{control_obj!=open}>|<closeProjectorbackup><{control_obj!=close}>)[<myhome>][<device_qualifier>][<position_name>]<Projectorbackup>[<FullYuqi>];
+//*C:帮我调成暖色调
+<i004_2>:<hmAuto_head>(<adjustto>|来点)<lighttone>[<de>]<tone>[[的]灯]<{control_obj#=彩灯}>[<FullYuqi>];
+//*C:房间调成暖色调
+<i004_1>:<hmAuto_head>[<let>]<environment>[[<de>]<colors><{control_obj#=彩灯}>]<adjustto>[<de>]<lighttone>[<de>]<tone>[[的]灯][<FullYuqi>];
