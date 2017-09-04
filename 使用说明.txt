@@ -10,6 +10,25 @@ http://blog.csdn.net/huangmeimao/article/details/77740760
 3. APP 实例代码
 demosourcecode.jar  添加即可，java 环境为JDK1.8
 
+如果需要debug源码，请在欧拉蜜官网上申请账号，并导入smarthome.osl.
+然后将应用程序的app key和app secret替换掉NLIProcess.java中的
+ // * Replace your APP KEY with this variable.
+	   
+private static String appKey = "*****your APP Key******";
+		
+// * Replace your APP SECRET with this variable.
+private static String appSecret = "****your APP Secret*****";
+
+源码详解请参考1 。
+
+ 也可以使用下面的参数，但无法修改语法：
+
+
+appKey  459708c3317143209c35b1881d9eb24a
+
+appSecret  e023b671a1144fa4a8d9e572a49b78eb
+
+
 4. 欧拉蜜JAVA SDK 介绍
 
 olami-java-client-sdk-1.0.1-bin：
