@@ -8,7 +8,14 @@ http://blog.csdn.net/huangmeimao/article/details/77834864
 注意：测试录音前请确保麦克风能正常输入。
 
 3. APP 实例代码
-smarthome_source_code.jar  添加即可，java 环境为JDK1.8
+smarthome_source_code.jar  添加即可，
+
+解压之后，添加入Eclispe工程，我的开发环境是JDK1.8. 
+Eclipse Version: Mars.2 Release (4.5.2). 
+**注意：导入工程后，如果出现文字报错，请将默认编码修改为UTF-8,方法 Project->Properties->Resource **
+
+
+
 
 如果需要debug源码，请在欧拉蜜官网上申请账号，并导入smarthome.osl.
 然后将应用程序的app key和app secret替换掉NLIProcess.java中的
@@ -19,9 +26,10 @@ private static String appKey = "*****your APP Key******";
 // * Replace your APP SECRET with this variable.
 private static String appSecret = "****your APP Secret*****";
 
+
 源码详解请参考1 。
 
- 也可以使用下面的参数，但无法修改语法：
+也可以使用下面的参数，但无法修改语法：
 
 
 appKey  459708c3317143209c35b1881d9eb24a
