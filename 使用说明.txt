@@ -1,5 +1,5 @@
 1.  实例讲解
-http://blog.csdn.net/huangmeimao/article/details/77740760
+http://blog.csdn.net/huangmeimao/article/details/77834864
 
 2. APP 可运行jar包----smarthome,jar
 
