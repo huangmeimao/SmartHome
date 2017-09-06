@@ -8,7 +8,7 @@ http://blog.csdn.net/huangmeimao/article/details/77740760
 注意：测试录音前请确保麦克风能正常输入。
 
 3. APP 实例代码
-demosourcecode.jar  添加即可，java 环境为JDK1.8
+smarthome_source_code.jar  添加即可，java 环境为JDK1.8
 
 如果需要debug源码，请在欧拉蜜官网上申请账号，并导入smarthome.osl.
 然后将应用程序的app key和app secret替换掉NLIProcess.java中的
