@@ -52,3 +52,7 @@ olami-java-client-1.0.1-sources.jar------------JAVA SDK源码，方便调试
 
 smarthome.osl
 
+6.  smarthome_source_code_AndroidStudio版本.zip
+
+Android Studio版本的工程源码
+
